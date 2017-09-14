@@ -1,0 +1,23 @@
+{
+    "name": "ip2location/ip2proxy-cakephp",
+    "description": "Allow users to query an IP address if it was being used as open proxy, web proxy, VPN anonymizer and TOR exits.",
+    "keywords": ["cakephp", "ip2proxy", "geolocation"],
+    "homepage": "https://github.com/ip2location/ip2proxy-cakephp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IP2Location",
+            "email": "support@ip2location.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "cakephp/cakephp": ">=3.0",
+        "ip2location/ip2proxy-php": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "IP2ProxyCakePHP\\": "src"
+        }
+    }
+}
