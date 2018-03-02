@@ -10,8 +10,8 @@ For CakePHP 3.x
 
 1. Run the command: `composer require ip2location/ip2proxy-cakephp` to download the plugin into the CakePHP 3 platform.
 2. Download latest IP2Proxy BIN database
-    - IP2Proxy free LITE database at http://lite.ip2location.com
-    - IP2Proxy commercial database at http://www.ip2location.com/proxy-database
+    - IP2Proxy free LITE database at https://lite.ip2location.com
+    - IP2Proxy commercial database at https://www.ip2location.com/proxy-database
 3. Unzip and copy the BIN file into *cakephp/vendor/ip2location/ip2proxy-cakephp/src/Data* folder. 
 4. Rename the BIN file to IP2PROXY.BIN.
 
@@ -74,10 +74,10 @@ class TestsController extends AppController
 
 ## DEPENDENCIES (IP2PROXY BIN DATA FILE)
 This library requires IP2Proxy BIN data file to function. You may download the BIN data file at
-* IP2Proxy LITE BIN Data (Free): http://lite.ip2location.com
-* IP2Proxy Commercial BIN Data (Comprehensive): http://www.ip2location.com/proxy-database
+* IP2Proxy LITE BIN Data (Free): https://lite.ip2location.com
+* IP2Proxy Commercial BIN Data (Comprehensive): https://www.ip2location.com/proxy-database
 
 ## SUPPORT
 Email: support@ip2location.com
 
-Website: http://www.ip2location.com
+Website: https://www.ip2location.com
