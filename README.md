@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ip2location/ip2proxy-cakephp.svg)](https://packagist.org/packages/ip2location/ip2proxy-cakephp)
 [![Total Downloads](https://img.shields.io/packagist/dt/ip2location/ip2proxy-cakephp.svg?style=flat-square)](https://packagist.org/packages/ip2location/ip2proxy-cakephp)
 
-IP2Proxy CakePHP plugin enables the user to query an IP address if it was being used as open proxy, web proxy, VPN anonymizer and TOR exits. It lookup the proxy IP address from IP2Proxy BIN Data file. Developers can use the API to query all IP2Proxy BIN databases for applications written using CakePHP.
+IP2Proxy CakePHP plugin enables the user to query an IP address if it was being used as open proxy, web proxy, VPN anonymizer and TOR exit nodes, search engine robots, data center ranges and residential proxies. It lookup the proxy IP address from IP2Proxy BIN Data file or web service. Developers can use the API to query all IP2Proxy BIN databases or web service for applications written using CakePHP.
 
 
 ## INSTALLATION
@@ -38,6 +38,15 @@ namespace App\Controller;
 use App\Controller\AppController;
 use IP2ProxyCakePHP\Controller\IP2ProxyCoresController;
 
+// (required) Define IP2Proxy API key.
+define('IP2PROXY_API_KEY', 'your_api_key');
+
+// (required) Define IP2Proxy Web service package of different granularity of return information.
+define('IP2PROXY_PACKAGE', 'PX1');
+
+// (optional) Define to use https or http.
+define('IP2PROXY_USESSL', false);
+
 /**
  * Tests Controller
  */
@@ -52,8 +61,9 @@ class TestsController extends AppController
     public function index()
     {
         $IP2Proxy = new IP2ProxyCoresController();
-        $record = $IP2Proxy->get('1.0.241.135');
 
+        $record = $IP2Proxy->get('1.0.241.135');
+        echo 'Result from BIN Database:<br>';
         echo '<p><strong>IP Address: </strong>' . $record['ipAddress'] . '</p>';
         echo '<p><strong>IP Number: </strong>' . $record['ipNumber'] . '</p>';
         echo '<p><strong>IP Version: </strong>' . $record['ipVersion'] . '</p>';
@@ -64,6 +74,18 @@ class TestsController extends AppController
         echo '<p><strong>Proxy Type: </strong>' . $record['proxyType'] . '</p>';
         echo '<p><strong>Is Proxy: </strong>' . $record['isProxy'] . '</p>';
         echo '<p><strong>ISP: </strong>' . $record['isp'] . '</p>';
+        echo '<p><strong>Domain: </strong>' . $record['domain'] . '</p>';
+        echo '<p><strong>Usage Type: </strong>' . $record['usageType'] . '</p>';
+        echo '<p><strong>ASN: </strong>' . $record['asn'] . '</p>';
+        echo '<p><strong>AS: </strong>' . $record['as'] . '</p>';
+        echo '<p><strong>Last Seen: </strong>' . $record['lastSeen'] . '</p>';
+        echo '<p><strong>Threat: </strong>' . $record['threat'] . '</p>';
+
+        $record = $IP2Proxy->getWebService('1.0.241.135');
+        echo 'Result from Web service:<br>';
+        echo '<pre>';
+        print_r ($record);
+        echo '</pre>';
     }
 
 }
@@ -71,11 +93,13 @@ class TestsController extends AppController
 5. Enter the URL <your domain>/Tests and run. You should see the information of **1.0.241.135** IP address.
 
 
-
 ## DEPENDENCIES (IP2PROXY BIN DATA FILE)
-This library requires IP2Proxy BIN data file to function. You may download the BIN data file at
+This library requires IP2Proxy BIN or IP2Proxy API key data file to function. You may download the BIN data file at
 * IP2Proxy LITE BIN Data (Free): https://lite.ip2location.com
 * IP2Proxy Commercial BIN Data (Comprehensive): https://www.ip2location.com/proxy-database
+
+You can also sign up for [IP2Proxy Web Service](https://www.ip2location.com/web-service/ip2proxy) to get one free API key.
+
 
 ## SUPPORT
 Email: support@ip2location.com
