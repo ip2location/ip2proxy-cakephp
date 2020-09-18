@@ -93,7 +93,7 @@ class TestsController extends AppController
 5. Enter the URL <your domain>/Tests and run. You should see the information of **1.0.241.135** IP address.
 
 
-## DEPENDENCIES (IP2PROXY BIN DATA FILE)
+## DEPENDENCIES
 This library requires IP2Proxy BIN or IP2Proxy API key data file to function. You may download the BIN data file at
 * IP2Proxy LITE BIN Data (Free): https://lite.ip2location.com
 * IP2Proxy Commercial BIN Data (Comprehensive): https://www.ip2location.com/proxy-database
