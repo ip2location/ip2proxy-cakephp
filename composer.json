@@ -15,9 +15,17 @@
         "cakephp/cakephp": ">=3.0",
         "ip2location/ip2proxy-php": ">=3.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
     "autoload": {
         "psr-4": {
             "IP2ProxyCakePHP\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IP2ProxyCakePHP\\Test\\": "tests"
         }
     }
 }
