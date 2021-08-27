@@ -79,7 +79,8 @@ class TestsController extends AppController
         echo '<p><strong>ASN: </strong>' . $record['asn'] . '</p>';
         echo '<p><strong>AS: </strong>' . $record['as'] . '</p>';
         echo '<p><strong>Last Seen: </strong>' . $record['lastSeen'] . '</p>';
-        echo '<p><strong>Threat: </strong>' . $record['threat'] . '</p>';
+        echo '<p><strong>Threat: </strong>' . $record['threat'] . '</p>';;
+        echo '<p><strong>Provider: </strong>' . $record['provider'] . '</p>';
 
         $record = $IP2Proxy->getWebService('1.0.241.135');
         echo 'Result from Web service:<br>';
