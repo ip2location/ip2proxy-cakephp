@@ -32,16 +32,14 @@ class IP2ProxyCoresController
 
     public function get($ip, $db = '')
     {
-        $obj = new \IP2Proxy\Database();
-
         if($db == '') {
-            $obj->open(ROOT . DS . 'vendor' . DS . 'ip2location' . DS . 'ip2proxy-cakephp' . DS . 'src' . DS . 'Data' . DS . 'IP2PROXY.BIN', \IP2Proxy\Database::FILE_IO);
+            $obj = new \IP2Proxy\Database(ROOT . DS . 'vendor' . DS . 'ip2location' . DS . 'ip2proxy-cakephp' . DS . 'src' . DS . 'Data' . DS . 'IP2PROXY.BIN', \IP2Proxy\Database::FILE_IO);
         } else {
-            $obj->open($db, \IP2Proxy\Database::FILE_IO);
+            $obj= new \IP2Proxy\Database($db, \IP2Proxy\Database::FILE_IO);
         }
 
         try {
-            $records = $obj->getAll($ip);
+            $records = $obj->lookup($ip, \IP2PROXY\Database::ALL);
         } catch (Exception $e) {
             return null;
         }
