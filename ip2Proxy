@@ -1,0 +1,58 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+use IP2ProxyCakePHP\Controller\IP2ProxyCoresController;
+
+// (required) Define IP2Proxy API key.
+define('IP2PROXY_API_KEY', 'your_api_key');
+
+// (required) Define IP2Proxy Web service package of different granularity of return information.
+define('IP2PROXY_PACKAGE', 'PX1');
+
+// (optional) Define to use https or http.
+define('IP2PROXY_USESSL', false);
+
+/**
+ * Tests Controller
+ */
+class TestsController extends AppController
+{
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function index()
+    {
+        $IP2Proxy = new IP2ProxyCoresController();
+
+        $record = $IP2Proxy->get('1.0.241.135');
+        echo 'Result from BIN Database:<br>';
+        echo '<p><strong>IP Address: </strong>' . $record['ipAddress'] . '</p>';
+        echo '<p><strong>IP Number: </strong>' . $record['ipNumber'] . '</p>';
+        echo '<p><strong>IP Version: </strong>' . $record['ipVersion'] . '</p>';
+        echo '<p><strong>Country Code: </strong>' . $record['countryCode'] . '</p>';
+        echo '<p><strong>Country: </strong>' . $record['countryName'] . '</p>';
+        echo '<p><strong>State: </strong>' . $record['regionName'] . '</p>';
+        echo '<p><strong>City: </strong>' . $record['cityName'] . '</p>';
+        echo '<p><strong>Proxy Type: </strong>' . $record['proxyType'] . '</p>';
+        echo '<p><strong>Is Proxy: </strong>' . $record['isProxy'] . '</p>';
+        echo '<p><strong>ISP: </strong>' . $record['isp'] . '</p>';
+        echo '<p><strong>Domain: </strong>' . $record['domain'] . '</p>';
+        echo '<p><strong>Usage Type: </strong>' . $record['usageType'] . '</p>';
+        echo '<p><strong>ASN: </strong>' . $record['asn'] . '</p>';
+        echo '<p><strong>AS: </strong>' . $record['as'] . '</p>';
+        echo '<p><strong>Last Seen: </strong>' . $record['lastSeen'] . '</p>';
+        echo '<p><strong>Threat: </strong>' . $record['threat'] . '</p>';
+        echo '<p><strong>Provider: </strong>' . $record['provider'] . '</p>';
+
+        $record = $IP2Proxy->getWebService('1.0.241.135');
+        echo 'Result from Web service:<br>';
+        echo '<pre>';
+        print_r ($record);
+        echo '</pre>';
+    }
+
+}
