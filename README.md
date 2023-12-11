@@ -38,14 +38,11 @@ namespace App\Controller;
 use App\Controller\AppController;
 use IP2ProxyCakePHP\Controller\IP2ProxyCoresController;
 
-// (required) Define IP2Proxy API key.
-define('IP2PROXY_API_KEY', 'your_api_key');
+// (required) Define IP2Location.io API key.
+define('IP2LOCATION_IO_API_KEY', 'your_api_key');
 
-// (required) Define IP2Proxy Web service package of different granularity of return information.
-define('IP2PROXY_PACKAGE', 'PX1');
-
-// (optional) Define to use https or http.
-define('IP2PROXY_USESSL', false);
+// (optional) Define Translation information. Refer to https://www.ip2location.io/ip2location-documentation for available languages.
+define('IP2LOCATION_IO_LANGUAGE', 'en');
 
 /**
  * Tests Controller
@@ -99,7 +96,7 @@ This library requires IP2Proxy BIN or IP2Proxy API key data file to function. Yo
 * IP2Proxy LITE BIN Data (Free): https://lite.ip2location.com
 * IP2Proxy Commercial BIN Data (Comprehensive): https://www.ip2location.com/proxy-database
 
-You can also sign up for [IP2Proxy Web Service](https://www.ip2location.com/web-service/ip2proxy) to get one free API key.
+You can also sign up for [IP2Location.io IP Geolocation API](https://www.ip2location.io/sign-up) to get one free API key.
 
 
 ## SUPPORT
