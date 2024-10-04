@@ -2,13 +2,13 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ip2location/ip2proxy-cakephp.svg)](https://packagist.org/packages/ip2location/ip2proxy-cakephp)
 [![Total Downloads](https://img.shields.io/packagist/dt/ip2location/ip2proxy-cakephp.svg?style=flat-square)](https://packagist.org/packages/ip2location/ip2proxy-cakephp)
 
-IP2Proxy CakePHP plugin enables the user to query an IP address if it was being used as open proxy, web proxy, VPN anonymizer and TOR exit nodes, search engine robots, data center ranges, residential proxies, consumer privacy networks, and enterprise private networks. It lookup the proxy IP address from IP2Proxy BIN Data file or web service. Developers can use the API to query all IP2Proxy BIN databases or web service for applications written using CakePHP.
+IP2Proxy CakePHP plugin enables the user to query an IP address if it was being used as open proxy, web proxy, VPN anonymizer and TOR exit nodes, search engine robots, data center ranges, residential proxies, consumer privacy networks and enterprise private networks. It lookup the proxy IP address from IP2Proxy BIN Data file or web service. Developers can use the API to query all IP2Proxy BIN databases or web service for applications written using CakePHP.
+
+Note: This plugin works in CakePHP 4 and CakePHP 5.
 
 
 ## INSTALLATION
-For CakePHP 4.x
-
-1. Run the command: `composer require ip2location/ip2proxy-cakephp` to download the plugin into the CakePHP 4 platform.
+1. Run the command: `composer require ip2location/ip2proxy-cakephp` to download the plugin into the CakePHP platform.
 2. Download latest IP2Proxy BIN database
     - IP2Proxy free LITE database at https://lite.ip2location.com
     - IP2Proxy commercial database at https://www.ip2location.com/proxy-database
@@ -24,7 +24,7 @@ Please select the right package for download.
 ## USAGE
 In this tutorial, we will show you on how to create a **TestsController** to display the IP information.
 
-1. Create a **TestsController** in CakePHP 4 using the below command line
+1. Create a **TestsController** in CakePHP using the below command line
 ```
 php bin/cake bake controller Tests
 ```
